@@ -1,1 +1,6 @@
-**/**/__pycache/
+__pycache__/
+node_modules/
+.gitignore
+endpoints-test.rest
+readme.md
+shell.mix
