@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+
+  backend:
+    build: ./back
+    container_name: fastapi_todo
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:////app/todos.db
+    volumes:
+      - ./todos.db:/app/todos.db
+
+  frontend:
+    build: ./front
+    container_name: solidjs_todo
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - todo_network
+
+networks:
+  todo_network:
+    driver: bridge

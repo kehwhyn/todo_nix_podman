@@ -1,0 +1,47 @@
+### 1. Create Todo
+POST http://localhost:8000/todos HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Finish project documentation",
+    "completed": false
+}
+
+###
+
+### 2. List All Todos
+GET http://localhost:8000/todos HTTP/1.1
+content-type: application/json
+
+###
+
+### 3. Get Specific Todo
+GET http://localhost:8000/todos/1 HTTP/1.1
+content-type: application/json
+
+###
+
+### 4. Update Todo
+PUT http://localhost:8000/todos/1 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Finish project docs ASAP",
+    "completed": true
+}
+
+###
+
+### 5. Partial Update
+PUT http://localhost:8000/todos/1 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Finished project docs ASAP"
+}
+
+###
+
+### 6. Delete Todo
+DELETE http://localhost:8000/todos/1 HTTP/1.1
+content-type: application/json
