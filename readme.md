@@ -1,21 +1,21 @@
 
 # Nix and Podman dev environment test
 
-This project is a simples todo app stack to get started using nix as dev env.
+This project is a simple todo app stack to get started using nix as dev env.
 You need to create a sqlite `todos.db` file at root level.
 
 ## Nix dev environment
 
 On root folder run the following:
 
-```sh
+```bash
 nix-shell
 ```
 
 ### Front-end
 
 Go to the solidjs_todo folder and run:
-```sh
+```bash
 npm i
 
 npm run dev
@@ -27,7 +27,7 @@ http://localhost:3000
 ### Back-end
 
 Go to back folder to run;:
-```sh
+```bash
 uvicorn main:app --host localhost --port 8000
 ```
 
@@ -39,13 +39,13 @@ http://localhost:8000/docs
 
 Podman works similiar as Docker. At root level run:
 
-```sh
+```bash
 podman compose up
 ```
 
 ### Front-end
 
-```sh
+```bash
 podman build -t todo_frontend .
 
 podman run --rm -it \
@@ -57,7 +57,7 @@ podman run --rm -it \
 ### Back-end
 
 Run container
-```sh
+```bash
 podman build -t todo_backend .
 
 podman run --rm -it \
@@ -71,6 +71,9 @@ podman run --rm -it \
 ## Tech Stack
 
 front: csr, node, npm, solidjs
+
 back: python, fastapi, sqlalchemy, pydantic, uvicorn
+
 db: sqlite
+
 devops: podman
